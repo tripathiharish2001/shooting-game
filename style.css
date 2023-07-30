@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-image: url("2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#canvas1 {
+  border: 5px black solid;
+
+  /* ALter of positioning */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: aqua;
+  /* max-height: 100%;
+  max-width: 100%; */
+  font-family: "Bangers", cursive;
+  width: 100vw;
+  height: 100vh;
+}
+
+#layer1,
+#layer2,
+#layer3,
+#layer4,
+#player,
+#angler1,
+#angler2,
+#lucky,
+#projectile,
+#gears,
+#hivewhale,
+#drone,
+#fireExplosion,
+#smokeExplosions,
+#bulbwhale,
+#moonfish,
+#fireball,
+#razorfin,
+#stalker {
+  display: none;
+}
