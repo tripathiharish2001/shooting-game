@@ -226,7 +226,7 @@ window.addEventListener("load", function (e) {
 
       // powerup
 
-      if (this.powerUp) {
+      if (this.powerUp && this.game.ammo <= this.game.maxAmmo) {
         if (this.powerUpTimer > this.powerUpLimit) {
           this.powerUpTimer = 0;
           this.powerUp = false;
