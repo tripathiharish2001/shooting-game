@@ -1,9 +1,23 @@
 let x = document.getElementById("gamesound");
-x.volume = 0.4;
+x.volume = 0.6;
 let musicPlaying = false;
-const playMusic = function () {
-  x.play();
-};
+const playMusic = function () {};
+
+let musicOn = false;
+let music = document.querySelector(".music");
+
+window.addEventListener("keydown", function (e) {
+  if (e.key === "m") {
+    console.log("m");
+    if (!musicOn) {
+      x.play();
+      musicOn = true;
+    } else {
+      x.pause();
+      musicOn = false;
+    }
+  }
+});
 
 window.addEventListener("load", function (e) {
   const canvas = document.getElementById("canvas1");
@@ -610,6 +624,10 @@ window.addEventListener("load", function (e) {
       // timer
       const formattedTime = (this.game.gameTime * 0.001).toFixed(1);
       context.fillText("Timer : " + formattedTime, 20, 100);
+
+      // music message
+      context.fillText("Click  '𝓜'  to ▶️/⏸ background music!", 800, 30);
+      context.fillStyle = this.color;
 
       // game over message
       if (this.game.gameOver) {
