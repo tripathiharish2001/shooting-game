@@ -13,15 +13,8 @@ body {
 
 #canvas1 {
   border: 5px black solid;
-
-  /* ALter of positioning */
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: aqua;
-  /* max-height: 100%;
-  max-width: 100%; */
+  background-image: url("assets/layer3.png");
   font-family: "Bangers", cursive;
   width: 100vw;
   height: 100vh;
