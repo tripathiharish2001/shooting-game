@@ -21,14 +21,16 @@ Bloodwater-Blitz is an exciting single-player 2D shooting game developed using H
 
 - *Author:* Harish Tripathi
 - *LinkedIn:* [Harish Tripathi on LinkedIn](https://www.linkedin.com/in/harish-tripathi-8bb144214/)
-- *GitHub:* [Harish Tripathi on GitHub]([https://github.com/harish-tripathi](https://github.com/tripathiharish2001)https://github.com/tripathiharish2001)
 
 ## Screenshots
 
+*Game UI*
 ![image](https://github.com/tripathiharish2001/Bloodwater-Blitz/assets/79781231/18756f45-961a-4f9f-b844-a4b8b75bfee6)
 
+*lose the game*
 ![image](https://github.com/tripathiharish2001/Bloodwater-Blitz/assets/79781231/ee54d837-27f1-4cf8-8b72-40fc9534427d)
 
+*Win the game/8
 ![image](https://github.com/tripathiharish2001/Bloodwater-Blitz/assets/79781231/ad7dfb16-04ec-4ba6-80ab-64fe66b76356)
 
 
