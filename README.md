@@ -1,5 +1,7 @@
 # Bloodwater-Blitz 🎮
 
+[*LINK*](https://tripathiharish2001.github.io/Bloodwater-Blitz/)
+
 Bloodwater-Blitz is an exciting single-player 2D shooting game developed using HTML, CSS, and JavaScript. Dive into the action-packed world of this game, where you'll face challenging enemies, engage in intense shootouts, and collect power-ups to boost your gameplay. Get ready for an adrenaline-pumping gaming experience!
 
 ## Tech Stack
