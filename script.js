@@ -6,7 +6,6 @@ const playMusic = function () {};
 let musicOn = false;
 let music = document.querySelector(".music");
 
-
 // #################
 const reloadButton = document.querySelector(".start");
 reloadButton.addEventListener("click", () => {
@@ -14,7 +13,6 @@ reloadButton.addEventListener("click", () => {
   location.reload();
 });
 // ###########
-
 
 window.addEventListener("keydown", function (e) {
   if (e.key === "m") {
@@ -28,10 +26,10 @@ window.addEventListener("keydown", function (e) {
     }
   }
 
-
   if (e.key === "r") {
     reloadButton.click();
   }
+});
 
 window.addEventListener("load", function (e) {
   const canvas = document.getElementById("canvas1");
@@ -254,10 +252,6 @@ window.addEventListener("load", function (e) {
       }
 
       // powerup
-<<<<<<< HEAD
-=======
-
->>>>>>> 3fea3f5f16a32d5a414d2be52ea7e18ef7c454ae
       if (this.powerUp && this.game.ammo <= this.game.maxAmmo) {
         if (this.powerUpTimer > this.powerUpLimit) {
           this.powerUpTimer = 0;
