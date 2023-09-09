@@ -1,4 +1,3 @@
-// in game music
 let x = document.getElementById("gamesound");
 x.volume = 0.6;
 let musicPlaying = false;
@@ -18,14 +17,14 @@ window.addEventListener("keydown", function (e) {
       musicOn = false;
     }
   }
-    if (e.key === "r") {
+
+  if (e.key === "r") {
     location.reload();
   }
 });
 
 window.addEventListener("load", function (e) {
   const canvas = document.getElementById("canvas1");
-  /* The above code is creating a variable `ctx` and assigning it the value of the 2D rendering context of a canvas element. */
   const ctx = canvas.getContext("2d");
 
   canvas.width = 1200;
@@ -244,6 +243,7 @@ window.addEventListener("load", function (e) {
       }
 
       // powerup
+
       if (this.powerUp && this.game.ammo <= this.game.maxAmmo) {
         if (this.powerUpTimer > this.powerUpLimit) {
           this.powerUpTimer = 0;
@@ -711,7 +711,6 @@ window.addEventListener("load", function (e) {
       this.background.update();
       this.background.layer4.update();
       this.player.update(deltaTime);
-
       if (this.ammoTimer > this.ammoInterval) {
         if (this.ammo < this.maxAmmo) this.ammo++;
         this.ammoTimer = 0;
@@ -871,10 +870,11 @@ window.addEventListener("load", function (e) {
 
   function animate(timeStamp) {
     playMusic();
+
     const deltaTime = timeStamp - lastTime;
+    // console.log(deltaTime);
     lastTime = timeStamp;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     game.draw(ctx);
     game.update(deltaTime);
 
