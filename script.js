@@ -1,12 +1,39 @@
 let x = document.getElementById("gamesound");
-x.volume = 0.4;
+x.volume = 0.6;
 let musicPlaying = false;
-const playMusic = function () {
-  x.play();
-};
+const playMusic = function () {};
+
+let musicOn = false;
+let music = document.querySelector(".music");
+
+// #################
+const reloadButton = document.querySelector(".start");
+reloadButton.addEventListener("click", () => {
+  // Reload the current page, including the JavaScript files.
+  location.reload();
+});
+// ###########
+
+window.addEventListener("keydown", function (e) {
+  if (e.key === "m") {
+    console.log("m");
+    if (!musicOn) {
+      x.play();
+      musicOn = true;
+    } else {
+      x.pause();
+      musicOn = false;
+    }
+  }
+
+  if (e.key === "r") {
+    reloadButton.click();
+  }
+});
 
 window.addEventListener("load", function (e) {
   const canvas = document.getElementById("canvas1");
+  /* The above code is creating a variable `ctx` and assigning it the value of the 2D rendering context of a canvas element. */
   const ctx = canvas.getContext("2d");
 
   canvas.width = 1200;
@@ -225,8 +252,7 @@ window.addEventListener("load", function (e) {
       }
 
       // powerup
-
-      if (this.powerUp) {
+      if (this.powerUp && this.game.ammo <= this.game.maxAmmo) {
         if (this.powerUpTimer > this.powerUpLimit) {
           this.powerUpTimer = 0;
           this.powerUp = false;
@@ -604,6 +630,7 @@ window.addEventListener("load", function (e) {
       context.shadowColor = "black";
       context.font = this.fontSize + "px " + this.fontFamily;
       context.fillText("Score : " + this.game.score, 25, 40);
+
       context.fillStyle = this.color;
       // ammo
 
@@ -611,9 +638,15 @@ window.addEventListener("load", function (e) {
       const formattedTime = (this.game.gameTime * 0.001).toFixed(1);
       context.fillText("Timer : " + formattedTime, 20, 100);
 
+      // music message
+      context.fillText("Click  '𝓜'  to ▶️/⏸ background music!", 800, 30);
+      context.fillStyle = this.color;
+
       // game over message
       if (this.game.gameOver) {
         // console.log(this.game.winningScore, this.game.score);
+        context.fillText("Click  'R'  to restart the game!", 900, 450);
+
         context.textAlign = "center";
         let message1, message2;
         if (this.game.score >= this.game.winningScore) {
@@ -688,6 +721,7 @@ window.addEventListener("load", function (e) {
       this.background.update();
       this.background.layer4.update();
       this.player.update(deltaTime);
+
       if (this.ammoTimer > this.ammoInterval) {
         if (this.ammo < this.maxAmmo) this.ammo++;
         this.ammoTimer = 0;
@@ -847,11 +881,10 @@ window.addEventListener("load", function (e) {
 
   function animate(timeStamp) {
     playMusic();
-
     const deltaTime = timeStamp - lastTime;
-    // console.log(deltaTime);
     lastTime = timeStamp;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     game.draw(ctx);
     game.update(deltaTime);
 
