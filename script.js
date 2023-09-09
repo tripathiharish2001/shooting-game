@@ -18,6 +18,9 @@ window.addEventListener("keydown", function (e) {
       musicOn = false;
     }
   }
+    if (e.key === "r") {
+    location.reload();
+  }
 });
 
 window.addEventListener("load", function (e) {
@@ -627,7 +630,8 @@ window.addEventListener("load", function (e) {
       context.fillText("Timer : " + formattedTime, 20, 100);
 
       // music message
-      context.fillText("Click  '𝓜'  to ▶️/⏸ background music!", 800, 30);
+      context.fillText("Press  '𝓜'  to ▶️/⏸ background music!", 800, 30);
+      context.fillText("Press  'R'  to 🔄️ the game!", 930, 460);
       context.fillStyle = this.color;
 
       // game over message
