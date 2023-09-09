@@ -1,3 +1,4 @@
+// in game music
 let x = document.getElementById("gamesound");
 x.volume = 0.6;
 let musicPlaying = false;
@@ -5,14 +6,6 @@ const playMusic = function () {};
 
 let musicOn = false;
 let music = document.querySelector(".music");
-
-// #################
-const reloadButton = document.querySelector(".start");
-reloadButton.addEventListener("click", () => {
-  // Reload the current page, including the JavaScript files.
-  location.reload();
-});
-// ###########
 
 window.addEventListener("keydown", function (e) {
   if (e.key === "m") {
@@ -24,10 +17,6 @@ window.addEventListener("keydown", function (e) {
       x.pause();
       musicOn = false;
     }
-  }
-
-  if (e.key === "r") {
-    reloadButton.click();
   }
 });
 
@@ -630,7 +619,6 @@ window.addEventListener("load", function (e) {
       context.shadowColor = "black";
       context.font = this.fontSize + "px " + this.fontFamily;
       context.fillText("Score : " + this.game.score, 25, 40);
-
       context.fillStyle = this.color;
       // ammo
 
@@ -645,8 +633,6 @@ window.addEventListener("load", function (e) {
       // game over message
       if (this.game.gameOver) {
         // console.log(this.game.winningScore, this.game.score);
-        context.fillText("Click  'R'  to restart the game!", 900, 450);
-
         context.textAlign = "center";
         let message1, message2;
         if (this.game.score >= this.game.winningScore) {
